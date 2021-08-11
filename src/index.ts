@@ -3,7 +3,6 @@ import badWords from './badWords'
 function preventableWord (word) {
   const revisedString = reviewFullString(word)
 
-  console.log('frase antes do for', revisedString)
   for (const phrase of revisedString) {
     const teste = badWords.includes(phrase)
     if (teste) return true
