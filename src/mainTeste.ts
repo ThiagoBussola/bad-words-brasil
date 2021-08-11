@@ -1,5 +1,5 @@
 import { preventableWord } from './index'
 
-const teste = preventableWord('puta')
+const teste = preventableWord('legal que babaca')
 
 console.log('aqui', teste)
