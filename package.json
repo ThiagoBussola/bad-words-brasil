@@ -1,6 +1,6 @@
 {
   "name": "bad-words-brasil",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Pacote para filtro de palavras portuguesas inapropriadas",
   "main": "src/index.ts",
   "scripts": {

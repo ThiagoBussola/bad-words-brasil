@@ -18,12 +18,19 @@ Caso exista alguma palabra inapropriada em sua _string_ a função irá retornar
 ```js
 // retorna true pois otario é uma palavra inapropriada
 preventableWord('otario')
+
+
+// você também pode passar uma frase como parámetro
+const frase = 'cara você é um otario'
+
+// ira retornar true pois nessa frase existe uma palavra inapropriada
+preventableWord(frase)
 ```
 
 ### Exemplo de palavra apropriada
 
 ```js
-// retorna false pois feliz é uma palavra inapropriada
+// retorna false pois feliz é uma palavra apropriada
 preventableWord('feliz')
 ```
 
