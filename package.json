@@ -1,5 +1,5 @@
 {
-  "name": "badword-brasil",
+  "name": "bad-words-brasil",
   "version": "1.0.0",
   "description": "Pacote para filtro de palavras portuguesas inapropriadas",
   "main": "src/index.ts",
@@ -11,17 +11,5 @@
   },
   "keywords": ["palavrão", "brasil", "inapropriado"],
   "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@types/jest": "^27.0.0",
-    "@types/node": "^16.4.13",
-    "jest": "^27.0.6",
-    "ts-node-dev": "^1.1.8",
-    "typescript": "^4.3.5"
-  },
-  "dependencies": {
-    "@babel/core": "^7.15.0",
-    "@babel/preset-env": "^7.15.0",
-    "babel-jest": "^27.0.6"
-  }
+  "license": "ISC"
 }
