@@ -1,11 +1,13 @@
-import badWords from './badWords'
+const badWords = require('./badWords.json').words
 
 function preventableWord (word) {
+  if(!(typeof word === 'string' || word instanceof String)) throw 'É necessário que o parametro seja um String'
+  
   const revisedString = reviewFullString(word)
 
   for (const phrase of revisedString) {
-    const teste = badWords.includes(phrase)
-    if (teste) return true
+    if(phrase.length < 2) continue;
+    if(badWords.indexOf(value) > -1) return true;
   }
   return false
 }
@@ -16,7 +18,7 @@ function reviewFullString (phrase) {
   }
   const lowerCasePhrase = phrase.toLowerCase()
 
-  const wordArr = lowerCasePhrase.split(' ')
+  const wordArr = lowerCasePhrase.trim().split(/\s+/)
 
   return wordArr
 }
