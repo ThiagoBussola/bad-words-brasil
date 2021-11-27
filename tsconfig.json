@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+      "preserveConstEnums": true,
+      "strictNullChecks": true,
+      "sourceMap": true,
+      "resolveJsonModule": true,
+      "allowJs": true,
+      "target": "es5",
+      "outDir": ".build",
+      "moduleResolution": "node",
+      "lib": ["es2019"],
+      "rootDir": "./",
+      "baseUrl": "."
+    },
+    "include": [
+      "src/**/*",
+      "lib/**/*",
+      "scripts/**/*",
+      "templates/**/*"
+    ]
+  }

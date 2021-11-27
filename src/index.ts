@@ -1,4 +1,7 @@
-const badWords = require('./badWords.json')
+import * as fs from 'fs';
+import * as path from 'path';
+
+const badWords = JSON.parse(fs.readFileSync(path.resolve(process.cwd(), 'src/badWords.json'), {encoding: 'utf-8'}))
 
 function preventableWord (word) {
   if(!(typeof word === "string" || word instanceof String)) throw "É necessário que o parametro seja um String"
@@ -22,6 +25,6 @@ function reviewFullString (phrase) {
   return wordArr
 }
 
-module.exports = {
+export {
   preventableWord
 }
