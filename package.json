@@ -1,6 +1,6 @@
 {
   "name": "bad-words-brasil",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "Pacote para filtro de palavras portuguesas inapropriadas",
   "main": "src/index.ts",
   "scripts": {
@@ -9,7 +9,14 @@
   "jest": {
     "verbose": true
   },
-  "keywords": ["palavrão", "brasil", "inapropriado"],
+  "keywords": [
+    "palavrão",
+    "brasil",
+    "inapropriado"
+  ],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^16.11.10"
+  }
 }

@@ -1,14 +1,14 @@
-const badWords = require("./badWords").words
+const badWords = require('./badWords.json')
 
 function preventableWord (word) {
   if(!(typeof word === "string" || word instanceof String)) throw "É necessário que o parametro seja um String"
-  if(!(word.length < 1)) return false;
+  if((word.length < 1)) return false;
   
   const revisedString = reviewFullString(word)
-
   for (const phrase of revisedString) {
     if(phrase.length < 2) continue;
-    if(badWords.indexOf(phrase) > -1) return true;
+
+    if(badWords.words.indexOf(phrase) > -1) return true;
   }
   return false
 }
@@ -22,6 +22,6 @@ function reviewFullString (phrase) {
   return wordArr
 }
 
-export {
+module.exports = {
   preventableWord
 }
