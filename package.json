@@ -1,22 +1,58 @@
 {
   "name": "bad-words-brasil",
-  "version": "1.1.0",
-  "description": "Pacote para filtro de palavras portuguesas inapropriadas",
-  "main": "src/index.ts",
-  "scripts": {
-    "test": "jest"
+  "version": "2.0.0",
+  "description": "Filtro de palavrões e abuso em português do Brasil, com normalização, máscaras, categorias e censura.",
+  "license": "ISC",
+  "author": "Thiago Bussola",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThiagoBussola/bad-words-brasil.git"
   },
-  "jest": {
-    "verbose": true
+  "bugs": {
+    "url": "https://github.com/ThiagoBussola/bad-words-brasil/issues"
   },
+  "homepage": "https://github.com/ThiagoBussola/bad-words-brasil#readme",
   "keywords": [
     "palavrão",
     "brasil",
-    "inapropriado"
+    "português",
+    "profanity",
+    "moderation",
+    "filter",
+    "bad-words"
   ],
-  "author": "",
-  "license": "ISC",
+  "engines": {
+    "node": ">=18"
+  },
+  "type": "commonjs",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "npm run build:cjs && npm run build:esm && npm run build:types && npm run build:esm-package",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "build:types": "tsc -p tsconfig.types.json",
+    "build:esm-package": "node -e \"require('fs').writeFileSync('dist/esm/package.json', JSON.stringify({type:'module'}))\"",
+    "test": "npm run build && node --test test/**/*.test.js",
+    "prepack": "npm run build",
+    "clean": "rm -rf dist"
+  },
   "devDependencies": {
-    "@types/node": "^16.11.10"
+    "@types/node": "^22.10.0",
+    "typescript": "^5.7.2"
   }
 }
